@@ -1,0 +1,23 @@
+{
+  "name": "@nomad-solutions/ts-utils",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "prepare": "husky",
+    "lint-staged": "lint-staged",
+    "version": "commit-and-tag-version"
+  },
+  "exports": {
+    ".": "./index.ts"
+  },
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "dependencies": { "consola": "^3.2.3" },
+  "devDependencies": {
+    "@nomad-solutions/dev-env": "github:Nomad-Solutions/dev-env#v2.0.1"
+  },
+  "trustedDependencies": [
+    "@nomad-solutions/dev-env",
+    "husky"
+  ]
+}

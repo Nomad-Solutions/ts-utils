@@ -1,0 +1,3 @@
+{
+	"extends": "@nomad-solutions/dev-env/tsconfig/tsconfig",
+}
