@@ -32,13 +32,14 @@ export type Keys<T extends Record<string, any>> = keyof T
 export type Values<T extends Record<string, any>> = T[Keys<T>]
 
 /* 
-Strips all null or undefined properties from a type / object
+Strips all null, undefined, or empty string properties from a type / object
 */
-export type Valuable<T> = { [K in keyof T as T[K] extends null | undefined ? never : K]: T[K] };
 
-export function removeNullValues<T extends object, V = Valuable<T>>(obj: T): V {
+export type Valuable<T> = { [K in keyof T as T[K] extends null | undefined | '' ? never : K]: T[K] };
+
+export function removeEmpty<T extends object, V = Valuable<T>>(obj: T): V {
 	return Object.fromEntries(
-		Object.entries(obj).filter(([ , v ]) => !(v === null || typeof v === 'undefined'))
+		Object.entries(obj).filter(([ , v ]) => !(v === null || typeof v === 'undefined' || v.trim?.() === ''))
 	) as V;
 }
 
