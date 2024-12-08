@@ -1,6 +1,6 @@
 {
   "name": "@nomad-solutions/ts-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "prepare": "husky",
@@ -12,7 +12,9 @@
   },
   "main": "./index.ts",
   "module": "./index.ts",
-  "dependencies": { "consola": "^3.2.3" },
+  "dependencies": {
+    "consola": "^3.2.3"
+  },
   "devDependencies": {
     "@nomad-solutions/dev-env": "github:Nomad-Solutions/dev-env#v2.0.1"
   },
