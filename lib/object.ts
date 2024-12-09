@@ -72,3 +72,9 @@ Returns only the specified properties from an object (like typescript's Pick uti
 export function mask<T, K extends keyof T>(obj: T, ...keys: K[]): PrettifyShallow<Pick<T, K>> {
 	return keys.reduce((o, k) => ((o[k] = obj[k]), o), {} as Pick<T, K>);
 }
+
+/**
+ * Returns a new object with the specified properties set to optional
+ */
+
+export type OptionalProps<T, K extends keyof T> = PrettifyShallow<Omit<T, K> & Partial<Pick<T, K>>>;
