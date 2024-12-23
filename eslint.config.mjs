@@ -1,5 +1,7 @@
-// eslint.config.mjs
-import config from '@nomad-solutions/dev-env/eslint';
+import tseslint from 'typescript-eslint';
+import base from '@nomad-solutions/dev-env/eslint/typescript';
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [ ...config ];
+export default tseslint.config(
+	base,
+);
+
