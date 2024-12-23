@@ -5,12 +5,22 @@ This library contains both utility functions and utility types.
 ## Install
 Add this repository as a dependency in your `package.json`:
 
-```json
+**Specific tag (recommended)**
+```json5
 // package.json
 {
-	"dependencies": {
-		"@nomad-solutions/ts-utils": "github:Nomad-Solutions/ts-utils#v1.0.0", // specific tag (recommended)
-		"@nomad-solutions/ts-utils": "github:Nomad-Solutions/ts-utils" // latest commit
+	"devDependencies": {
+		"@nomad-solutions/ts-utils": "github:Nomad-Solutions/ts-utils#v{version}"
+	}
+}
+```
+
+**Latest commit**
+```json5
+// package.json
+{
+	"devDependencies": {
+		"@nomad-solutions/ts-utils": "github:Nomad-Solutions/ts-utils"
 	}
 }
 ```
@@ -37,5 +47,6 @@ When developing on this package, it might be beneficial to see how changes inter
 
 This package should now be usable in your application (see [Usage section](#usage)), and updates to this package will be reflected instantly in your application (by the magic of symlinks).
 
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -->
 > [!IMPORTANT]  
 > This will not add the dependency to your `package.json`, so you will need to [install](#install) this package manually if you wish to do use it.
