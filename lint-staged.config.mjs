@@ -1,5 +1,3 @@
-import config from '@nomad-solutions/dev-env/lint-staged';
+import eslintConfig from '@nomad-solutions/dev-env/lint-staged/eslint';
 
-export default {
-	...config
-};
+export default eslintConfig;
