@@ -6,6 +6,7 @@ type StringNumericLiteral = `${number}` | 'Infinity' | '-Infinity' | '+Infinity'
 
 const numberFormatter = new Intl.NumberFormat('da-DK');
 
-export function formatNumber(num: number, decimals: number = 2): string {
+export function formatNumber(num: number, decimals = 2): string {
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
 	return numberFormatter.format(num.toFixed(decimals) as StringNumericLiteral);
 }

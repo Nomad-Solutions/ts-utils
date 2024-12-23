@@ -55,8 +55,10 @@ export function createShutdownHandler(procs: ShutdownFunc[], timeout: number = S
 type ShutdownFunc = () => Promise<void>;
 
 function getErrors(settledPromises: Awaited<ReturnType<typeof Promise.allSettled>>) {
-	return settledPromises.filter((res): res is {
-		status: 'rejected',
-		reason: unknown 
-	} => res.status === 'rejected').map(({ reason }) => reason);
+	return settledPromises
+		.filter((res): res is {
+			status: 'rejected',
+			reason: unknown 
+		} => res.status === 'rejected')
+		.map(({ reason }) => reason);
 }
