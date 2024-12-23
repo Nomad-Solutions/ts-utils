@@ -9,7 +9,10 @@ export type ISODateString<Sep1 extends string = '-', Sep2 extends string = '-'> 
 	`${number}${number}${number}${number}${Sep1}${number}${number}${Sep2}${number}${number}`
 
 export function getISODateString(date: Date): ISODateString {
-	return date.toISOString().split('T')[0] as ISODateString;
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- when split, the type is actually ISODateString, and we want to skip runtime checks
+	return date
+		.toISOString()
+		.split('T')[0] as ISODateString;
 }
 
 /*

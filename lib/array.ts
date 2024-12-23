@@ -12,6 +12,7 @@ Takes an array and the index to move element from and the index to move element 
 
 export function arrayMoveInPlace<T>(arr: T[], from: number, to: number) {
 	const e = arr[from];
+
 	arr.splice(from, 1);
 	arr.splice(to, 0, e);
 }
@@ -49,7 +50,9 @@ Counts the different values in an array
 */
 
 export function countArrayItems<T>(arr: T[]): Map<T, number> {
-	return arr.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map());
+	return arr.reduce((acc: Map<T, number>, element) => acc.set(element, (acc.get(element) || 0) + 1),
+		new Map<T, number>()
+	);
 }
 
 /*
@@ -57,7 +60,8 @@ Tells you how many times a specific value is in an array
 */
 
 export function countArrayItem<T>(arr: T[], item: T): number {
-	return countArrayItems(arr).get(item) || 0;
+	return countArrayItems(arr)
+		.get(item) || 0;
 }
 
 /*
@@ -67,3 +71,11 @@ Tells you if there are no duplicates in an array
 export function arrayItemsAreUnique<T>(arr: T[]): boolean {
 	return arr.length === new Set(arr).size;
 }
+
+/**
+Tweaked version of https://github.com/sindresorhus/type-fest/blob/main/source/non-empty-tuple.d.ts.
+
+Creates array type that has at least one element
+*/
+
+export type NonEmptyArray<T = unknown> = [T, ...T[]];
