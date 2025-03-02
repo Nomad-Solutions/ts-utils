@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.2.0](https://github.com/Nomad-Solutions/ts-utils/compare/v1.1.0...v1.2.0) (2025-03-02)
+
+
+### Features
+
+* add formatting functions and support date and strings for date utils ([883e9da](https://github.com/Nomad-Solutions/ts-utils/commit/883e9dae3a5ddf48943f7811bc7a1c4501025902))
+
+
+### Bug Fixes
+
+* ignore linting changelog ([5adf024](https://github.com/Nomad-Solutions/ts-utils/commit/5adf024bfc43feed8290f5ee25534166c0967184))
+
 ## [1.1.0](https://github.com/Nomad-Solutions/ts-utils/compare/v1.0.1...v1.1.0) (2024-12-23)
 
 
