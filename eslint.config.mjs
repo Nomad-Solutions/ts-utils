@@ -3,5 +3,8 @@ import base from '@nomad-solutions/dev-env/eslint/typescript';
 
 export default tseslint.config(
 	base,
+	{ 
+		ignores: [ 'CHANGELOG.md' ]
+	}
 );
 
