@@ -64,6 +64,18 @@ export function formatDKDateTime(date: Date | string): string {
 }
 
 /*
+Converts date into a string with the format 'HH.MM' for Danish locale
+*/
+const timeFormatter = new Intl.DateTimeFormat('da-DK', {
+	hour: '2-digit',
+	minute: '2-digit',
+});
+
+export function formatDKTime(date: Date | string): string {
+	return timeFormatter.format(new Date(date));
+}
+
+/*
 Formats a number as a currency string in DKK
 */
 
